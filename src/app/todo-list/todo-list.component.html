@@ -1,0 +1,14 @@
+<h2>Todo Items</h2>
+
+<div *ngFor="let todo of todos">
+  <app-todo-item [todo]="todo" (deleteTodo)="deleteTodo(todo)"></app-todo-item>
+</div>
+
+<form (ngSubmit)="addTodo()">
+  <input
+    [(ngModel)]="newTodoText"
+    name="todoText"
+    placeholder="New todo item"
+  />
+  <button type="submit">Add</button>
+</form>
